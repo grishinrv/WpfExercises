@@ -19,7 +19,9 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Column="0" Background="Lavender" BorderBrush="LightGray" BorderThickness="1"/>
+        <Border Grid.Column="0" Background="Lavender" BorderBrush="LightGray" BorderThickness="1">
+            <Button/>
+        </Border>
         <Border Grid.Column="1"  Background="Lavender" BorderBrush="LightGray" BorderThickness="1" />
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -28,20 +30,12 @@
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0" Background="Lavender" BorderBrush="LightGray" BorderThickness="1"/>
             <Border Grid.Column="1"  Background="Lavender" BorderBrush="LightGray" BorderThickness="1" />
-            <my:ThumbnailEx Grid.Column="0" Margin="10,10,10,10" Name="thumbnailEx1" Background="Black" />
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="1"  Orientation="Vertical" VerticalAlignment="Top">
-                    <StackPanel.Resources>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Template">
-                            </Setter>
-                        </Style>
-                    </StackPanel.Resources>
-                    <Button />
-        <Button/>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
