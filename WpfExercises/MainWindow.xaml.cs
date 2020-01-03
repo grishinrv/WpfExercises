@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WpfExercises.Model;
+using WpfExercises.ViewModels;
+using WpfExercises.Views;
 
 namespace WpfExercises
 {
@@ -23,6 +14,11 @@ namespace WpfExercises
         public MainWindow()
         {
             InitializeComponent();
+            var form = new QuestionEditor();
+            var dataContext = new QuestionEditorViewModel();
+            dataContext.CurrentQuestion = new Question("Текст вопроса", new List<Answer>());
+            form.DataContext = dataContext;
+            form.Show();
         }
     }
 }
