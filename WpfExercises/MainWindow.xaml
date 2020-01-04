@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Frame Source="/Views/QuizPage.xaml"></Frame>
+        <Frame Source="/Views/QuestionEditor.xaml"></Frame>
     </Grid>
 </Window>

@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Windows;
-using WpfExercises.Model;
-using WpfExercises.ViewModels;
-using WpfExercises.Views;
+﻿using System.Windows;
 
 namespace WpfExercises
 {
@@ -14,11 +10,6 @@ namespace WpfExercises
         public MainWindow()
         {
             InitializeComponent();
-            var form = new QuestionEditor();
-            var dataContext = new QuestionEditorViewModel();
-            dataContext.CurrentQuestion = new Question("Текст вопроса", new List<Answer>());
-            form.DataContext = dataContext;
-            form.Show();
         }
     }
 }

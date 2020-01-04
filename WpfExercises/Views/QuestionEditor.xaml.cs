@@ -15,7 +15,7 @@ namespace WpfExercises.Views
     /// <summary>
     /// Interaction logic for QuestionEditor.xaml
     /// </summary>
-    public partial class QuestionEditor : Window
+    public partial class QuestionEditor : Page
     {
         public QuestionEditor()
         {
