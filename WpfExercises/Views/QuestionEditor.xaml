@@ -13,9 +13,13 @@
     <Grid>
         <TextBox 
             Background="Pink"
-            Width="360"
-            Height="40"
-            FontSize="36"
+            Height="60"
+            Width="400"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Auto"
+            FontSize="14"
             Text="{Binding Path=CurrentQuestionText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
         </TextBox>
     </Grid>

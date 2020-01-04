@@ -15,7 +15,7 @@ namespace WpfExercises.ViewModels
         {
             get => _currentQuestion.Text;
             set 
-            {
+             {
                 _currentQuestion.Text = value;
                 NotifyPropertyChanged(nameof(CurrentQuestionText));
             }
