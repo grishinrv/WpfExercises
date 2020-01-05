@@ -11,7 +11,17 @@
         <VM:QuestionEditorViewModel />
     </Page.DataContext>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>        
         <TextBox 
+            Grid.Column="0"
+            Grid.Row="0"
             Background="Pink"
             Height="60"
             Width="400"
@@ -20,7 +30,37 @@
             HorizontalScrollBarVisibility="Disabled"
             VerticalScrollBarVisibility="Auto"
             FontSize="14"
-            Text="{Binding Path=CurrentQuestionText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            Text="{Binding Path=CurrentQuestionText, Mode=TwoWay, UpdateSourceTrigger=LostFocus}">
         </TextBox>
+        <ComboBox
+            Grid.Column="0"
+            Grid.Row="1"
+            ItemsSource="{Binding Path=Answers}">
+            <ComboBox.Resources>
+                <Style TargetType="ComboBoxItem" BasedOn="{StaticResource {x:Type ComboBoxItem}}">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+                <Style TargetType="CheckBox" 
+                       BasedOn="{StaticResource {x:Type CheckBox}}">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </ComboBox.Resources>
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock 
+                            Grid.Column="0"
+                            Text="Верный ответ"/>
+                        <CheckBox 
+                            Grid.Column="1"
+                            IsChecked="{Binding XPath=@IsSuccessfull}"/>
+                    </Grid>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </Grid>
 </Page>
