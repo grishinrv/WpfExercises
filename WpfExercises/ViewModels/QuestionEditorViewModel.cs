@@ -14,10 +14,10 @@ namespace WpfExercises.ViewModels
                 "Текст по умолчанию", 
                 new List<Answer>()
                 { 
-                    new Answer(true, "Первый вариант ответа"),
-                    new Answer(false, "Второй вариант ответа"),
-                    new Answer(false, "Третий вариант ответа"),
-                    new Answer(false, "Четвертый вариант ответа")
+                    new Answer(){IsRightAnswer = true, Text = "Первый вариант ответа" },
+                    new Answer(){IsRightAnswer = false, Text = "Второй вариант ответа" },
+                    new Answer(){IsRightAnswer = false, Text = "Третий вариант ответа" },
+                    new Answer(){IsRightAnswer = false, Text = "Четвертый вариант ответа" }
                 });
             Answers = new ObservableCollection<Answer>();
             foreach (var item in _currentQuestion.Answers)

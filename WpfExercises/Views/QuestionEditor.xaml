@@ -47,18 +47,36 @@
             </ComboBox.Resources>
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock 
-                            Grid.Column="0"
-                            Text="Верный ответ"/>
-                        <CheckBox 
-                            Grid.Column="1"
-                            IsChecked="{Binding XPath=@IsSuccessfull}"/>
-                    </Grid>
+                    <Border BorderBrush="Black" BorderThickness="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock 
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Text="Верный ответ"/>
+                            <CheckBox 
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                IsChecked="{Binding IsRightAnswer}"
+                                IsHitTestVisible="False"/>
+                            <TextBlock 
+                                Grid.Column="0"
+                                Grid.Row="1"
+                                Text="Текст варианта ответа"/>
+                            <TextBlock 
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                HorizontalAlignment="Center"
+                                Text="{Binding Text}"/>
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
